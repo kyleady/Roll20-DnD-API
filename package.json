@@ -1,7 +1,7 @@
 {
   "name": "roll20-rogue-trader-api",
   "version": "1.0.0",
-  "description": "Collection of Roll20 API Scripts for a FFG Rogue Trader Campaign.",
+  "description": "Collection of Roll20 API Scripts for D&D.",
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
@@ -11,12 +11,12 @@
   },
   "scripts": {
     "test": "npm run compile_script && npm run compile_module && mocha --recursive",
-    "compile_script": "echo \"\" > INQTotal.js && find ./Scripts -type f -exec cat {} + >> INQTotal.js",
-    "compile_module": "echo \"require('mock20')\" > INQModule.js && cat INQTotal.js >> INQModule.js && echo \"MOCK20endOfLastScript();\" >> INQModule.js"
+    "compile_script": "echo \"\" > INKTotal.js && find ./Scripts -type f -exec cat {} + >> INKTotal.js",
+    "compile_module": "echo \"require('mock20')\" > INKModule.js && cat INKTotal.js >> INKModule.js && echo \"MOCK20endOfLastScript();\" >> INKModule.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kyleady/Roll20-Rogue-Trader-API.git"
+    "url": "git+https://github.com/kyleady/Roll20-DnD-API.git"
   },
   "keywords": [
     "Roll20"
@@ -24,7 +24,7 @@
   "author": "Kyle Smith <kyledavidady@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kyleady/Roll20-Rogue-Trader-API/issues"
+    "url": "https://github.com/kyleady/Roll20-DnD-API/issues"
   },
-  "homepage": "https://github.com/kyleady/Roll20-Rogue-Trader-API#readme"
+  "homepage": "https://github.com/kyleady/Roll20-DnD-API#readme"
 }
