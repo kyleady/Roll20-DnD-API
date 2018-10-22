@@ -5,7 +5,7 @@ require('mock20');
 describe('eachCharacter()', function() {
 	it('should execute the given function for each selected character', function(){
 		Campaign().MOCK20reset();
-		var filePath = path.join(__dirname, '..', '..', '..', 'INQTotal.js');
+		var filePath = path.join(__dirname, '..', '..', '..', 'INKTotal.js');
 		var MyScript = fs.readFileSync(filePath, 'utf8');
 		eval(MyScript);
     var page = createObj('page', {name: 'test page'}, {MOCK20override: true});
@@ -32,7 +32,7 @@ describe('eachCharacter()', function() {
   });
   it('should use defaultCharacter() if a player has nothing selected', function(){
 		Campaign().MOCK20reset();
-		var filePath = path.join(__dirname, '..', '..', '..', 'INQTotal.js');
+		var filePath = path.join(__dirname, '..', '..', '..', 'INKTotal.js');
 		var MyScript = fs.readFileSync(filePath, 'utf8');
 		eval(MyScript);
     var player = createObj('player', {_displayname: 'player name'}, {MOCK20override: true});
@@ -67,9 +67,9 @@ describe('eachCharacter()', function() {
     player.MOCK20chat('!api default', {MOCK20selected: [], MOCK20tag: 'eachCharacter_defaultCharacter'});
     expect(graphics).to.have.ordered.members([graphic3.id]);
   });
-	it('should use every graphic on gm\'s current page if the gm has nothing selected', function(){
+	it('should select nothing if the gm has nothing selected', function(){
 		Campaign().MOCK20reset();
-		var filePath = path.join(__dirname, '..', '..', '..', 'INQTotal.js');
+		var filePath = path.join(__dirname, '..', '..', '..', 'INKTotal.js');
 		var MyScript = fs.readFileSync(filePath, 'utf8');
 		eval(MyScript);
 		var page1 = createObj('page', {name: 'main page'}, {MOCK20override: true});
@@ -95,12 +95,12 @@ describe('eachCharacter()', function() {
       });
     });
 		player.MOCK20chat('!api gm', {MOCK20selected: [], MOCK20tag: 'eachCharacter_gm'});
-		expect(graphics).to.have.members([graphic3.id, graphic6.id]);
-		expect(graphics).not.to.have.members([graphic1.id, graphic2.id, graphic4.id, graphic5.id]);
+		expect(graphics).to.have.members([]);
+		expect(graphics).not.to.have.members([graphic1.id, graphic2.id, graphic3.id, graphic4.id, graphic5.id, graphic6.id]);
 	});
 	it('should execute without a graphic or character if the _type is \'unique\'', function(){
 		Campaign().MOCK20reset();
-		var filePath = path.join(__dirname, '..', '..', '..', 'INQTotal.js');
+		var filePath = path.join(__dirname, '..', '..', '..', 'INKTotal.js');
 		var MyScript = fs.readFileSync(filePath, 'utf8');
 		eval(MyScript);
 		var counter = 0;

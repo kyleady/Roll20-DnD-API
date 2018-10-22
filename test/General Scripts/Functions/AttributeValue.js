@@ -2,13 +2,13 @@ var expect = require('chai').expect;
 var fs = require('fs');
 var path = require('path');
 require('mock20');
-var INQTotal = '';
+var INKTotal = '';
 describe('attributeValue()', function() {
 	it('should get the current value of the named attribute when no options are specified', function () {
 		Campaign().MOCK20reset();
-		var filePath = path.join(__dirname, '..', '..', '..', 'INQTotal.js');
-		INQTotal = fs.readFileSync(filePath, 'utf8');
-		eval(INQTotal);
+		var filePath = path.join(__dirname, '..', '..', '..', 'INKTotal.js');
+		INKTotal = fs.readFileSync(filePath, 'utf8');
+		eval(INKTotal);
 
 		var character = createObj('character', {name: 'test character'});
 		var page = createObj('page', {name: 'test page'}, {MOCK20override: true});
@@ -19,9 +19,9 @@ describe('attributeValue()', function() {
   });
 	it('should be able to get the max value', function () {
 		Campaign().MOCK20reset();
-		var filePath = path.join(__dirname, '..', '..', '..', 'INQTotal.js');
-		INQTotal = fs.readFileSync(filePath, 'utf8');
-		eval(INQTotal);
+		var filePath = path.join(__dirname, '..', '..', '..', 'INKTotal.js');
+		INKTotal = fs.readFileSync(filePath, 'utf8');
+		eval(INKTotal);
 
 		var character = createObj('character', {name: 'test character'});
 		var page = createObj('page', {name: 'test page'}, {MOCK20override: true});
@@ -32,9 +32,9 @@ describe('attributeValue()', function() {
 	});
 	it('should be able to write to the current or max value', function () {
 		Campaign().MOCK20reset();
-		var filePath = path.join(__dirname, '..', '..', '..', 'INQTotal.js');
-		INQTotal = fs.readFileSync(filePath, 'utf8');
-		eval(INQTotal);
+		var filePath = path.join(__dirname, '..', '..', '..', 'INKTotal.js');
+		INKTotal = fs.readFileSync(filePath, 'utf8');
+		eval(INKTotal);
 
 		var character = createObj('character', {name: 'test character'});
 		var page = createObj('page', {name: 'test page'}, {MOCK20override: true});

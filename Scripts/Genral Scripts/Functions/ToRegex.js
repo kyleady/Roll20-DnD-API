@@ -3,11 +3,11 @@ function toRegex(obj, options){
   if(typeof obj == 'string') obj = {Name: obj};
   var pattern = '';
   if(obj.Alternates) pattern += '(?:';
-  pattern += obj.Name.replace(/[- ]/g, '(?:\\s*|-)');
+  pattern += obj.Name.replace(/[-_ ]/g, '[-_\\s]*');
   if(obj.Alternates){
       pattern += '|';
     _.each(obj.Alternates, function(alternate){
-      pattern += alternate.replace(/[- ]/g, '(?:\\s*|-)');
+      pattern += alternate.replace(/[-_ ]/g, '[-_\\s]*');
       pattern += '|';
     });
     pattern = pattern.replace(/\|$/, '');

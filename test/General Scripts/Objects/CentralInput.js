@@ -5,7 +5,7 @@ require('mock20');
 describe('CentralInput', function() {
   it('whisper to the user if an unrecognized API command was input', function(done){
     Campaign().MOCK20reset();
-    var filePath = path.join(__dirname, '..', '..', '..', 'INQTotal.js');
+    var filePath = path.join(__dirname, '..', '..', '..', 'INKTotal.js');
   	var MyScript = fs.readFileSync(filePath, 'utf8');
   	eval(MyScript);
     var player = createObj('player', {_displayname: 'test player'}, {MOCK20override: true});
@@ -20,7 +20,7 @@ describe('CentralInput', function() {
   });
   it('should default to setting permissions on commands as gm-only', function(done){
     Campaign().MOCK20reset();
-    var filePath = path.join(__dirname, '..', '..', '..', 'INQTotal.js');
+    var filePath = path.join(__dirname, '..', '..', '..', 'INKTotal.js');
   	var MyScript = fs.readFileSync(filePath, 'utf8');
   	eval(MyScript);
     var player = createObj('player', {_displayname: 'test player'}, {MOCK20override: true});
@@ -36,7 +36,7 @@ describe('CentralInput', function() {
   });
   it('should allow you to give players access to cmds', function(done){
     Campaign().MOCK20reset();
-    var filePath = path.join(__dirname, '..', '..', '..', 'INQTotal.js');
+    var filePath = path.join(__dirname, '..', '..', '..', 'INKTotal.js');
   	var MyScript = fs.readFileSync(filePath, 'utf8');
   	eval(MyScript);
     var player = createObj('player', {_displayname: 'test player'}, {MOCK20override: true});

@@ -5,7 +5,7 @@ require('mock20');
 
 describe('numModifier', function() {
   Campaign().MOCK20reset();
-  var filePath = path.join(__dirname, '..', '..', '..', 'INQTotal.js');
+  var filePath = path.join(__dirname, '..', '..', '..', 'INKTotal.js');
   var MyScript = fs.readFileSync(filePath, 'utf8');
   eval(MyScript);
 	it('should be able to return a regex', function(){

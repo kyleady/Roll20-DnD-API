@@ -2,13 +2,13 @@ var expect = require('chai').expect;
 var fs = require('fs');
 var path = require('path');
 require('mock20');
-var INQTotal = '';
+var INKTotal = '';
 describe('matchingObjs()', function() {
 	it('should return an array of every matching obj', function () {
 		Campaign().MOCK20reset();
-		var filePath = path.join(__dirname, '..', '..', '..', 'INQTotal.js');
-		INQTotal = fs.readFileSync(filePath, 'utf8');
-		eval(INQTotal);
+		var filePath = path.join(__dirname, '..', '..', '..', 'INKTotal.js');
+		INKTotal = fs.readFileSync(filePath, 'utf8');
+		eval(INKTotal);
     MOCK20endOfLastScript();
 
     var player = createObj('player', {_displayname: 'matchingObjs player'}, {MOCK20override: true});
@@ -23,9 +23,9 @@ describe('matchingObjs()', function() {
   });
   it('should accept a string instead of an array for the obj types', function () {
 		Campaign().MOCK20reset();
-		var filePath = path.join(__dirname, '..', '..', '..', 'INQTotal.js');
-		INQTotal = fs.readFileSync(filePath, 'utf8');
-		eval(INQTotal);
+		var filePath = path.join(__dirname, '..', '..', '..', 'INKTotal.js');
+		INKTotal = fs.readFileSync(filePath, 'utf8');
+		eval(INKTotal);
     MOCK20endOfLastScript();
 
     var player = createObj('player', {_displayname: 'matchingObjs player'}, {MOCK20override: true});
@@ -40,9 +40,9 @@ describe('matchingObjs()', function() {
   });
   it('should allow for additional criteria', function () {
 		Campaign().MOCK20reset();
-		var filePath = path.join(__dirname, '..', '..', '..', 'INQTotal.js');
-		INQTotal = fs.readFileSync(filePath, 'utf8');
-		eval(INQTotal);
+		var filePath = path.join(__dirname, '..', '..', '..', 'INKTotal.js');
+		INKTotal = fs.readFileSync(filePath, 'utf8');
+		eval(INKTotal);
     MOCK20endOfLastScript();
 
     var player = createObj('player', {_displayname: 'matchingObjs player'}, {MOCK20override: true});
@@ -59,9 +59,9 @@ describe('matchingObjs()', function() {
   });
 	it('should search default characters when searching for just players', function () {
 		Campaign().MOCK20reset();
-		var filePath = path.join(__dirname, '..', '..', '..', 'INQTotal.js');
-		INQTotal = fs.readFileSync(filePath, 'utf8');
-		eval(INQTotal);
+		var filePath = path.join(__dirname, '..', '..', '..', 'INKTotal.js');
+		INKTotal = fs.readFileSync(filePath, 'utf8');
+		eval(INKTotal);
     MOCK20endOfLastScript();
 
     var player = createObj('player', {_displayname: 'matchingObjs player'}, {MOCK20override: true});

@@ -5,7 +5,7 @@ require('mock20');
 describe('where()', function() {
 	it('should whisper the player page and the specific player pages to the gm', function(done){
 		Campaign().MOCK20reset();
-		var filePath = path.join(__dirname, '..', '..', '..', 'INQTotal.js');
+		var filePath = path.join(__dirname, '..', '..', '..', 'INKTotal.js');
 		var MyScript = fs.readFileSync(filePath, 'utf8');
 		eval(MyScript);
 		MOCK20endOfLastScript();

@@ -5,7 +5,7 @@ require('mock20');
 describe('find()', function() {
 	it('should whisper links of matching handouts and characters the user can view', function(done){
 		Campaign().MOCK20reset();
-		var filePath = path.join(__dirname, '..', '..', '..', 'INQTotal.js');
+		var filePath = path.join(__dirname, '..', '..', '..', 'INKTotal.js');
 		var MyScript = fs.readFileSync(filePath, 'utf8');
 		eval(MyScript);
 		MOCK20endOfLastScript();
@@ -48,7 +48,7 @@ describe('find()', function() {
   });
 	it('should whisper all matching handouts and characters when the gm searches', function(done){
 		Campaign().MOCK20reset();
-		var filePath = path.join(__dirname, '..', '..', '..', 'INQTotal.js');
+		var filePath = path.join(__dirname, '..', '..', '..', 'INKTotal.js');
 		var MyScript = fs.readFileSync(filePath, 'utf8');
 		eval(MyScript);
 		MOCK20endOfLastScript();

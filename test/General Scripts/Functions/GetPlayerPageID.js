@@ -5,7 +5,7 @@ require('mock20');
 describe('getPlayerPageID()', function() {
 	it('should return a player\'s specific page', function(){
 		Campaign().MOCK20reset();
-		var filePath = path.join(__dirname, '..', '..', '..', 'INQTotal.js');
+		var filePath = path.join(__dirname, '..', '..', '..', 'INKTotal.js');
 		var MyScript = fs.readFileSync(filePath, 'utf8');
 		eval(MyScript);
 		MOCK20endOfLastScript();
@@ -22,7 +22,7 @@ describe('getPlayerPageID()', function() {
   });
   it('should return a gm\'s last page', function(){
 		Campaign().MOCK20reset();
-		var filePath = path.join(__dirname, '..', '..', '..', 'INQTotal.js');
+		var filePath = path.join(__dirname, '..', '..', '..', 'INKTotal.js');
 		var MyScript = fs.readFileSync(filePath, 'utf8');
 		eval(MyScript);
 		MOCK20endOfLastScript();
@@ -40,7 +40,7 @@ describe('getPlayerPageID()', function() {
   });
   it('should return the general player page if there is no specific page', function(){
 		Campaign().MOCK20reset();
-		var filePath = path.join(__dirname, '..', '..', '..', 'INQTotal.js');
+		var filePath = path.join(__dirname, '..', '..', '..', 'INKTotal.js');
 		var MyScript = fs.readFileSync(filePath, 'utf8');
 		eval(MyScript);
 		MOCK20endOfLastScript();
@@ -57,7 +57,7 @@ describe('getPlayerPageID()', function() {
   });
   it('should return the general player page if there is no last page for a gm', function(){
 		Campaign().MOCK20reset();
-		var filePath = path.join(__dirname, '..', '..', '..', 'INQTotal.js');
+		var filePath = path.join(__dirname, '..', '..', '..', 'INKTotal.js');
 		var MyScript = fs.readFileSync(filePath, 'utf8');
 		eval(MyScript);
 		MOCK20endOfLastScript();
@@ -75,7 +75,7 @@ describe('getPlayerPageID()', function() {
   });
   it('should warn if the player is invalid', function(done){
 		Campaign().MOCK20reset();
-		var filePath = path.join(__dirname, '..', '..', '..', 'INQTotal.js');
+		var filePath = path.join(__dirname, '..', '..', '..', 'INKTotal.js');
 		var MyScript = fs.readFileSync(filePath, 'utf8');
 		eval(MyScript);
 		MOCK20endOfLastScript();

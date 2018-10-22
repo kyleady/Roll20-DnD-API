@@ -2,13 +2,13 @@ var expect = require('chai').expect;
 var fs = require('fs');
 var path = require('path');
 require('mock20');
-var INQTotal = '';
+var INKTotal = '';
 describe('suggestCMD()', function() {
 	it('should return false if any of the phrases fail to match', function () {
 		Campaign().MOCK20reset();
-		var filePath = path.join(__dirname, '..', '..', '..', 'INQTotal.js');
-		INQTotal = fs.readFileSync(filePath, 'utf8');
-		eval(INQTotal);
+		var filePath = path.join(__dirname, '..', '..', '..', 'INKTotal.js');
+		INKTotal = fs.readFileSync(filePath, 'utf8');
+		eval(INKTotal);
 		MOCK20endOfLastScript();
 
 		var player = createObj('player', {_displayname: 'phrase1 player'}, {MOCK20override: true});
@@ -17,9 +17,9 @@ describe('suggestCMD()', function() {
 	});
   it('should return false if any of the phrases have more than one match', function () {
 		Campaign().MOCK20reset();
-		var filePath = path.join(__dirname, '..', '..', '..', 'INQTotal.js');
-		INQTotal = fs.readFileSync(filePath, 'utf8');
-		eval(INQTotal);
+		var filePath = path.join(__dirname, '..', '..', '..', 'INKTotal.js');
+		INKTotal = fs.readFileSync(filePath, 'utf8');
+		eval(INKTotal);
     MOCK20endOfLastScript();
 
     var player = createObj('player', {_displayname: 'phrase11 player'}, {MOCK20override: true});
@@ -30,9 +30,9 @@ describe('suggestCMD()', function() {
   });
   it('should return an array of matching objs if each had exactly one match', function () {
 		Campaign().MOCK20reset();
-		var filePath = path.join(__dirname, '..', '..', '..', 'INQTotal.js');
-		INQTotal = fs.readFileSync(filePath, 'utf8');
-		eval(INQTotal);
+		var filePath = path.join(__dirname, '..', '..', '..', 'INKTotal.js');
+		INKTotal = fs.readFileSync(filePath, 'utf8');
+		eval(INKTotal);
     MOCK20endOfLastScript();
 
     var player = createObj('player', {_displayname: 'phrase11 player'}, {MOCK20override: true});
@@ -43,9 +43,9 @@ describe('suggestCMD()', function() {
   });
   it('should allow you to enter one phrase instead of an array of phrases', function () {
 		Campaign().MOCK20reset();
-		var filePath = path.join(__dirname, '..', '..', '..', 'INQTotal.js');
-		INQTotal = fs.readFileSync(filePath, 'utf8');
-		eval(INQTotal);
+		var filePath = path.join(__dirname, '..', '..', '..', 'INKTotal.js');
+		INKTotal = fs.readFileSync(filePath, 'utf8');
+		eval(INKTotal);
     MOCK20endOfLastScript();
 
     var player = createObj('player', {_displayname: 'phrase11 player'}, {MOCK20override: true});
@@ -56,9 +56,9 @@ describe('suggestCMD()', function() {
   });
   it('should allow you to enter an array of roll20 types', function () {
 		Campaign().MOCK20reset();
-		var filePath = path.join(__dirname, '..', '..', '..', 'INQTotal.js');
-		INQTotal = fs.readFileSync(filePath, 'utf8');
-		eval(INQTotal);
+		var filePath = path.join(__dirname, '..', '..', '..', 'INKTotal.js');
+		INKTotal = fs.readFileSync(filePath, 'utf8');
+		eval(INKTotal);
     MOCK20endOfLastScript();
 
     var player = createObj('player', {_displayname: 'phrase11 player'}, {MOCK20override: true});
@@ -69,9 +69,9 @@ describe('suggestCMD()', function() {
   });
   it('should allow you to add additional criteria', function () {
 		Campaign().MOCK20reset();
-		var filePath = path.join(__dirname, '..', '..', '..', 'INQTotal.js');
-		INQTotal = fs.readFileSync(filePath, 'utf8');
-		eval(INQTotal);
+		var filePath = path.join(__dirname, '..', '..', '..', 'INKTotal.js');
+		INKTotal = fs.readFileSync(filePath, 'utf8');
+		eval(INKTotal);
     MOCK20endOfLastScript();
 
     var player = createObj('player', {_displayname: 'phrase11 player', _online: true}, {MOCK20override: true});
@@ -84,9 +84,9 @@ describe('suggestCMD()', function() {
   });
 	it('should warn the user and the gm if no matches were found', function (done) {
 		Campaign().MOCK20reset();
-		var filePath = path.join(__dirname, '..', '..', '..', 'INQTotal.js');
-		INQTotal = fs.readFileSync(filePath, 'utf8');
-		eval(INQTotal);
+		var filePath = path.join(__dirname, '..', '..', '..', 'INKTotal.js');
+		INKTotal = fs.readFileSync(filePath, 'utf8');
+		eval(INKTotal);
 		MOCK20endOfLastScript();
 
 		var player = createObj('player', {_displayname: 'phrase1 player'}, {MOCK20override: true});
@@ -113,9 +113,9 @@ describe('suggestCMD()', function() {
   });
 	it('should warn the user and the gm if too many matches were found', function (done) {
 		Campaign().MOCK20reset();
-		var filePath = path.join(__dirname, '..', '..', '..', 'INQTotal.js');
-		INQTotal = fs.readFileSync(filePath, 'utf8');
-		eval(INQTotal);
+		var filePath = path.join(__dirname, '..', '..', '..', 'INKTotal.js');
+		INKTotal = fs.readFileSync(filePath, 'utf8');
+		eval(INKTotal);
 		MOCK20endOfLastScript();
 
 		var player = createObj('player', {_displayname: 'PHRASE11 player'}, {MOCK20override: true});
@@ -148,9 +148,9 @@ describe('suggestCMD()', function() {
   });
 	it('should replace the $ in the suggestion with a suggested name', function (done) {
 		Campaign().MOCK20reset();
-		var filePath = path.join(__dirname, '..', '..', '..', 'INQTotal.js');
-		INQTotal = fs.readFileSync(filePath, 'utf8');
-		eval(INQTotal);
+		var filePath = path.join(__dirname, '..', '..', '..', 'INKTotal.js');
+		INKTotal = fs.readFileSync(filePath, 'utf8');
+		eval(INKTotal);
 		MOCK20endOfLastScript();
 
 		var player = createObj('player', {_displayname: 'PHRASE11 player'}, {MOCK20override: true});
@@ -177,9 +177,9 @@ describe('suggestCMD()', function() {
   });
 	it('should replace $$ with $ in the suggestion', function (done) {
 		Campaign().MOCK20reset();
-		var filePath = path.join(__dirname, '..', '..', '..', 'INQTotal.js');
-		INQTotal = fs.readFileSync(filePath, 'utf8');
-		eval(INQTotal);
+		var filePath = path.join(__dirname, '..', '..', '..', 'INKTotal.js');
+		INKTotal = fs.readFileSync(filePath, 'utf8');
+		eval(INKTotal);
 		MOCK20endOfLastScript();
 
 		var player = createObj('player', {_displayname: 'PHRASE11 player'}, {MOCK20override: true});
@@ -206,9 +206,9 @@ describe('suggestCMD()', function() {
   });
 	it('should return an object that responds to get in place of an empty string', function () {
 		Campaign().MOCK20reset();
-		var filePath = path.join(__dirname, '..', '..', '..', 'INQTotal.js');
-		INQTotal = fs.readFileSync(filePath, 'utf8');
-		eval(INQTotal);
+		var filePath = path.join(__dirname, '..', '..', '..', 'INKTotal.js');
+		INKTotal = fs.readFileSync(filePath, 'utf8');
+		eval(INKTotal);
 		MOCK20endOfLastScript();
 
 		var player = createObj('player', {_displayname: 'PHRASE11 player'}, {MOCK20override: true});

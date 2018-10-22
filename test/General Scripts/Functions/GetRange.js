@@ -5,7 +5,7 @@ require('mock20');
 describe('getRange()', function() {
 	it('should return the distance between two graphics', function(){
 		Campaign().MOCK20reset();
-		var filePath = path.join(__dirname, '..', '..', '..', 'INQTotal.js');
+		var filePath = path.join(__dirname, '..', '..', '..', 'INKTotal.js');
 		var MyScript = fs.readFileSync(filePath, 'utf8');
 		eval(MyScript);
 		MOCK20endOfLastScript();
@@ -19,7 +19,7 @@ describe('getRange()', function() {
   });
   it('should return undefined if the graphics are not on the same page', function(){
 		Campaign().MOCK20reset();
-		var filePath = path.join(__dirname, '..', '..', '..', 'INQTotal.js');
+		var filePath = path.join(__dirname, '..', '..', '..', 'INKTotal.js');
 		var MyScript = fs.readFileSync(filePath, 'utf8');
 		eval(MyScript);
 		MOCK20endOfLastScript();
@@ -34,7 +34,7 @@ describe('getRange()', function() {
   });
   it('should return undefined if at least one of the graphics does not exist', function(){
 		Campaign().MOCK20reset();
-		var filePath = path.join(__dirname, '..', '..', '..', 'INQTotal.js');
+		var filePath = path.join(__dirname, '..', '..', '..', 'INKTotal.js');
 		var MyScript = fs.readFileSync(filePath, 'utf8');
 		eval(MyScript);
 		MOCK20endOfLastScript();
@@ -47,7 +47,7 @@ describe('getRange()', function() {
   });
   it('should multiply the distance by 1000 if using kilometers', function(){
 		Campaign().MOCK20reset();
-		var filePath = path.join(__dirname, '..', '..', '..', 'INQTotal.js');
+		var filePath = path.join(__dirname, '..', '..', '..', 'INKTotal.js');
 		var MyScript = fs.readFileSync(filePath, 'utf8');
 		eval(MyScript);
 		MOCK20endOfLastScript();
@@ -61,7 +61,7 @@ describe('getRange()', function() {
   });
 	it('should remove half its average width from the distance if the range is not an aura', function(){
 		Campaign().MOCK20reset();
-		var filePath = path.join(__dirname, '..', '..', '..', 'INQTotal.js');
+		var filePath = path.join(__dirname, '..', '..', '..', 'INKTotal.js');
 		var MyScript = fs.readFileSync(filePath, 'utf8');
 		eval(MyScript);
 		MOCK20endOfLastScript();

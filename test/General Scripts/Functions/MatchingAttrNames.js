@@ -2,13 +2,13 @@ var expect = require('chai').expect;
 var fs = require('fs');
 var path = require('path');
 require('mock20');
-var INQTotal = '';
+var INKTotal = '';
 describe('matchingAttrNames()', function() {
 	it('should return an array of every matching Attribute or Local Attribute name', function () {
 		Campaign().MOCK20reset();
-		var filePath = path.join(__dirname, '..', '..', '..', 'INQTotal.js');
-		INQTotal = fs.readFileSync(filePath, 'utf8');
-		eval(INQTotal);
+		var filePath = path.join(__dirname, '..', '..', '..', 'INKTotal.js');
+		INKTotal = fs.readFileSync(filePath, 'utf8');
+		eval(INKTotal);
     MOCK20endOfLastScript();
 
     var player = createObj('player', {_displayname: 'matchingAttrNames player'}, {MOCK20override: true});
@@ -24,9 +24,9 @@ describe('matchingAttrNames()', function() {
   });
 	it('if there is an exact match, it should only return an an array only containing the exact match', function () {
 		Campaign().MOCK20reset();
-		var filePath = path.join(__dirname, '..', '..', '..', 'INQTotal.js');
-		INQTotal = fs.readFileSync(filePath, 'utf8');
-		eval(INQTotal);
+		var filePath = path.join(__dirname, '..', '..', '..', 'INKTotal.js');
+		INKTotal = fs.readFileSync(filePath, 'utf8');
+		eval(INKTotal);
     MOCK20endOfLastScript();
 
     var player = createObj('player', {_displayname: 'matchingAttrNames player'}, {MOCK20override: true});

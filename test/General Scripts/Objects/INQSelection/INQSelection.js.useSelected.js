@@ -5,7 +5,7 @@ require('mock20');
 describe('INQSelection.useSelected()', function() {
 	it('should edit the given msg to select the saved selection', function(){
 		Campaign().MOCK20reset();
-		var filePath = path.join(__dirname, '..', '..', '..', '..', 'INQTotal.js');
+		var filePath = path.join(__dirname, '..', '..', '..', '..', 'INKTotal.js');
 		var MyScript = fs.readFileSync(filePath, 'utf8');
 		eval(MyScript);
 		MOCK20endOfLastScript();
@@ -28,7 +28,7 @@ describe('INQSelection.useSelected()', function() {
   });
   it('should remove the saved selection when used', function(){
 		Campaign().MOCK20reset();
-		var filePath = path.join(__dirname, '..', '..', '..', '..', 'INQTotal.js');
+		var filePath = path.join(__dirname, '..', '..', '..', '..', 'INKTotal.js');
 		var MyScript = fs.readFileSync(filePath, 'utf8');
 		eval(MyScript);
 		MOCK20endOfLastScript();
@@ -48,7 +48,7 @@ describe('INQSelection.useSelected()', function() {
   });
   it('should do nothing if the msg already has something selected', function(){
 		Campaign().MOCK20reset();
-		var filePath = path.join(__dirname, '..', '..', '..', '..', 'INQTotal.js');
+		var filePath = path.join(__dirname, '..', '..', '..', '..', 'INKTotal.js');
 		var MyScript = fs.readFileSync(filePath, 'utf8');
 		eval(MyScript);
 		MOCK20endOfLastScript();

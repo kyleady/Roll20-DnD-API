@@ -1,5 +1,5 @@
 {
-  "name": "roll20-rogue-trader-api",
+  "name": "roll20-dnd-api",
   "version": "1.0.0",
   "description": "Collection of Roll20 API Scripts for D&D.",
   "main": "index.js",

@@ -4,7 +4,7 @@ var path = require('path');
 require('mock20');
 describe('whisper()', function() {
   Campaign().MOCK20reset();
-  var filePath = path.join(__dirname, '..', '..', '..', 'INQTotal.js');
+  var filePath = path.join(__dirname, '..', '..', '..', 'INKTotal.js');
   var MyScript = fs.readFileSync(filePath, 'utf8');
   eval(MyScript);
   it('should whisper to the gm by default', function(done){

@@ -5,7 +5,7 @@ require('mock20');
 describe('INQSelection.saveSelected()', function() {
 	it('should record the currently selected graphics', function(done){
 		Campaign().MOCK20reset();
-		var filePath = path.join(__dirname, '..', '..', '..', '..', 'INQTotal.js');
+		var filePath = path.join(__dirname, '..', '..', '..', '..', 'INKTotal.js');
 		var MyScript = fs.readFileSync(filePath, 'utf8');
 		eval(MyScript);
 		MOCK20endOfLastScript();
@@ -31,7 +31,7 @@ describe('INQSelection.saveSelected()', function() {
   });
   it('should alert both the gm and the user that a selection was saved', function(done){
 		Campaign().MOCK20reset();
-		var filePath = path.join(__dirname, '..', '..', '..', '..', 'INQTotal.js');
+		var filePath = path.join(__dirname, '..', '..', '..', '..', 'INKTotal.js');
 		var MyScript = fs.readFileSync(filePath, 'utf8');
 		eval(MyScript);
 		MOCK20endOfLastScript();
