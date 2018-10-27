@@ -1,5 +1,6 @@
 INKTest.prototype.getOutput = function() {
-  if(this.isNPC && this.Macro.CustomNPC) return this.custom();
-  if(!this.isNPC && this.Macro.Custom) return this.custom();
-  return `%{${this.Name}|${this.getMacro()}}`;
+  const macro = this.getMacro();
+  const customOutput = this.custom(macro);
+  if(customOutput) return customOutput.call(this, macro);
+  return `%{${this.Name}|${macro}}`;
 }

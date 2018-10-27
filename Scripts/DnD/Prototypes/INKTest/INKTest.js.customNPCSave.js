@@ -1,7 +1,6 @@
-INKTest.prototype.customNPCSave = function() {
-  const npcSave = this.getMacro()
+INKTest.prototype.customNPCSave = function(macro) {
   let ability = '';
-  switch(npcSave) {
+  switch(macro) {
     case 'npc_str_save':
       ability = 'strength';
       break;
@@ -25,9 +24,9 @@ INKTest.prototype.customNPCSave = function() {
   let output = '&{template:npc} ';
   output += `@{${this.Name}|npc_name_flag} `;
   output += `{{rname=^{${ability}-save}}} `;
-  output += `{{mod=[[@{${this.Name}|${npcSave}}]]}} `;
-  output += `{{r1=[[@{${this.Name}|d20}+@{${this.Name}|${npcSave}}]]}} `;
-  output += `@{${this.Name}|rtype}+@{${this.Name}|${npcSave}}]]}} `;
+  output += `{{mod=[[@{${this.Name}|${macro}}]]}} `;
+  output += `{{r1=[[@{${this.Name}|d20}+@{${this.Name}|${macro}}]]}} `;
+  output += `@{${this.Name}|rtype}+@{${this.Name}|${macro}}]]}} `;
   output += `{{type=Save}}`;
   return output;
 }

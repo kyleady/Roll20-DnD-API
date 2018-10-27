@@ -1,7 +1,5 @@
-INKTest.prototype.customNPCAbility = function() {
-  const npcSave = this.getMacro()
-  let ability = '';
-  switch(npcSave) {
+INKTest.prototype.customNPCAbility = function(macro) {
+  switch(macro) {
     case 'npc_str':
       ability = 'strength';
       break;
