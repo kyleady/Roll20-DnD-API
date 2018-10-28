@@ -4,14 +4,15 @@ const INKGetTheDate = (matches, msg) => {
 }
 
 const INKSetTheDate = (matches, msg) => {
-  const timeDiff = matches[1];
+  const subtract = matches[1] === '-';
+  const timeDiff = matches[2];
   const date = new INKDate();
-  date.add(timeDiff);
+  date.add(timeDiff, { subtract });
   date.save();
   announce(`It is now ${date.toString()}.`);
 }
 
 on('ready', () => {
   CentralInput.addCMD(/^!\s*(?:time|date)\s*\??\s*$/i, INKGetTheDate, true);
-  CentralInput.addCMD(/^!\s*(?:time|date)\s*\+\s*=?\s*((?:\d+\s*(?:days?|months?|years?)\s*,?\s*)+)$/i, INKSetTheDate);
+  CentralInput.addCMD(/^!\s*(?:time|date)\s*(\+|-)\s*=?\s*((?:\d+\s*(?:days?|months?|years?)\s*,?\s*)+)$/i, INKSetTheDate);
 });
