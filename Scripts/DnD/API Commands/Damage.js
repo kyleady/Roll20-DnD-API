@@ -13,6 +13,13 @@ const INKDamage = (matches, msg) => {
   });
 }
 
+const INKDamageQuery = (matches, msg) => {
+  const totalDmg = state.INK_DATA.dmg || 0;
+  const totalCrit = state.INK_DATA.crit || 0;
+  whisper(`Dmg: ${totalDmg}, Crit: ${totalCrit}`);
+}
+
 on('ready', () => {
-  CentralInput.addCMD(/^!\s*dmg\s*(|crit|critical)\s*$/i, INKDamage, true);
+  CentralInput.addCMD(/^!\s*dmg\s*(|crit|critical)\s*$/i, INKDamage);
+  CentralInput.addCMD(/^!\s*dmg\s*\?\s*$/i, INKDamageQuery);
 });
