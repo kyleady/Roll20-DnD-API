@@ -1,5 +1,5 @@
 INKDate.parseTimeDiff = (timeDiffs) => {
-  const matches = timeDiffs.match(/(\d+)\s*(day|month|year)/gi);
+  const matches = timeDiffs.match(/(\d+)\s*(day|month|year)/gi) || [];
   let totalDays = 0;
   matches.forEach((timeDiff) => {
     let [, value, type] = timeDiff.match(/(\d+)\s*(day|month|year)/i);

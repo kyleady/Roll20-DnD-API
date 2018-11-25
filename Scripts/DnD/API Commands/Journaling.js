@@ -1,7 +1,11 @@
 const INKJournaling = (matches, msg) => {
-  const content = matches[1].trim();
-  const date = new INKDate().toString({ capitalizeThe: true });
-  const journalEntry = `<b>${date}</b>: ${content}`;
+  const subtract = matches[1] === '-';
+  const timeDiff = matches[2];
+  const content = matches[3];
+  const date = new INKDate();
+  date.add(timeDiff, { subtract });
+  const modified_date = date.toString({ capitalizeThe: true });
+  const journalEntry = `<b>${modified_date}</b>: ${content}`;
   const addEntry = (obj, prop) => obj.get(prop, (notes) => {
     if(notes === 'null') notes = '';
     //If no delay is added then
@@ -33,5 +37,6 @@ const INKJournaling = (matches, msg) => {
 }
 
 on('ready', () => {
-  CentralInput.addCMD(/^!\s*journal\s*(.*)$/i, INKJournaling, true);
+  CentralInput.addCMD(/^!\s*journal\s*(\+|-)\s*=?\s*((?:\d+\s*(?:days?|months?|years?)\s*,?\s*)+)(.*)$/i, INKJournaling, true);
+  CentralInput.addCMD(/^!\s*journal()()(.*)$/i, INKJournaling, true);
 });
