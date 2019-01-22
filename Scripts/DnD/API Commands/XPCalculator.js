@@ -25,8 +25,12 @@ INKExpPlayersSet = (matches, msg) => {
 INKExpAdd = (matches, msg) => {
   let room = [];
   eachCharacter(msg, (character, graphic) => {
-    const xp = Number(getAttrByName(character.id, 'npc_xp'));
-    if(xp) room.push(xp);
+    const xp_text = getAttrByName(character.id, 'npc_xp');
+    const xp_matches = xp_text.match(/\d+/);
+    if(xp_matches) {
+      const xp = Number(xp_matches[0]);
+      room.push(xp);
+    }
   });
 
   if(room.length <= 0) return whisper('ERROR: No xp to add.');
