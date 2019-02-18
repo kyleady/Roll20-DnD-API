@@ -2,7 +2,7 @@ on('chat:message', function(msg) {
   const isADamageRoll = msg.content.match(/{{damage=1}}/)
   if(!isADamageRoll) return;
 
-  const re = '{{(globaldamage|)(|dmg|crit)(\\d+)=\\$\\[\\[(\\d+)\\]\\]}}';
+  const re = '{{(globaldamage|)(|dmg|crit)(\\d*)=\\$\\[\\[(\\d+)\\]\\]}}';
   const dmgMatches = msg.content.match(RegExp(re, 'g')) || [];
   const indexes = {
     crit: {},

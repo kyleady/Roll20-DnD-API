@@ -12,6 +12,8 @@ const INKCustomLight = (matches, msg) => {
       light_angle: angle,
     });
   });
+
+  whisper(`Light Added: ${bright} ${dim} ${matches[3]} % ${angle}`);
 }
 
 const INKLight = (matches, msg) => {
@@ -38,6 +40,7 @@ INKLight.sources = [
   { Name: 'Lantern', Bright: '30', Dim: '60', CanSee: 'all', Angle: '360' },
   { Name: 'Light', Bright: '20', Dim: '40', CanSee: 'all', Angle: '360' },
   { Name: 'None', Bright: '0', Dim: '0', CanSee: '', Angle: '360' },
+  { Name: 'Dark Vision', Bright: '0', Dim: '30', CanSee: '', Angle: '360' },
 ];
 
 on('ready', () => {
