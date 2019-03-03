@@ -35,5 +35,5 @@ on('chat:message', function(msg) {
   state.INK_DATA.dmg = totalDmg;
   state.INK_DATA.crit = totalCrit;
 
-  whisper(`Dmg: ${totalDmg}, Crit: ${totalCrit}`);
+  whisper(`Dmg: ${totalDmg}, Crit: ${totalDmg + totalCrit}`);
 });
