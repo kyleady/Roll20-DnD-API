@@ -1,6 +1,8 @@
 INKTest.skills = () => [
   { Name: 'athletics', NPCName: 'npc_athletics' },
   { Name: 'acrobatics', NPCName: 'npc_acrobatics' },
+  { Name: 'deception', NPCName: 'npc_deception' },
+  { Name: 'religion', NPCName: 'npc_religion' },
   { Name: 'sleight_of_hand', NPCName: 'npc_sleight_of_hand' },
   { Name: 'stealth', NPCName: 'npc_stealth' },
   { Name: 'arcana', NPCName: 'npc_arcana' },
