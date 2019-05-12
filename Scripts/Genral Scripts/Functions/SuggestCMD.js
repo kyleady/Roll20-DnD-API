@@ -10,7 +10,7 @@ function suggestCMD(suggestedCMD, names, playerid, type, additionalCriteria){
     }
     var items = matchingObjs(type, name.split(' '), additionalCriteria);
     items = trimToPerfectMatches(items, name);
-    if(!suggestIfNotOne(items, names, suggestedCMD, playerid, i)) return false;
+    if(!suggestIfNotOne(items, names, suggestedCMD, playerid, { nameIndex: i})) return false;
     output.push(items[0]);
   }
 

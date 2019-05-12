@@ -12,7 +12,7 @@ const addRepeatingButton = (matches, msg, suggestedCMD, namePattern, abilityPatt
 
   eachCharacter(msg, (character, graphic) => {
     const matchingAttrs = matchingRepeatingAttrs(namePattern, name, character.id);
-    if(!suggestIfNotOne(matchingAttrs, name, suggestedCMD, msg.playerid)) return false;
+    if(!suggestIfNotOne(matchingAttrs, name, suggestedCMD, msg.playerid, { value: 'current' })) return false;
     const matchingAttr = matchingAttrs[0];
     const repeatingId = extractId(matchingAttr.get('name'), namePattern);
     const ability = abilityPattern.replace('$$', repeatingId);
@@ -25,6 +25,6 @@ const addRepeatingButton = (matches, msg, suggestedCMD, namePattern, abilityPatt
     });
 
     const characterLink = getLink(character);
-    whisper(`${abilityName} was added to ${characterLink}.`);
-  }, { onlyOneCharacter: true} );
+    whisper(`${abilityName} was added to ${characterLink}.`, { speakingTo: msg.playerid });
+  }, { onlyOneCharacter: true } );
 }

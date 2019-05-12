@@ -1,7 +1,10 @@
-const suggestIfNotOne = (items, names, suggestedCMD, playerid, nameIndex) => {
-  nameIndex = nameIndex || 0;
+const suggestIfNotOne = (items, names, suggestedCMD, playerid, options) => {
+  options = options || {};
+  options.nameIndex = options.nameIndex || 0;
+  options.value = options.value || 'name';
+
   if(typeof names == 'string') names = [names];
-  const name = names[nameIndex];
+  const name = names[options.nameIndex];
 
   var suggestionIndex = suggestedCMD.search(/\$([^\$]|$)/);
   suggestedCMD = suggestedCMD.replace(/\$\$/g, '$');
@@ -14,15 +17,15 @@ const suggestIfNotOne = (items, names, suggestedCMD, playerid, nameIndex) => {
   } else if(items.length > 1) {
     whisper('There were multiple matches for *' + name + '*.', {speakingTo: playerid,  gmEcho: true});
     _.each(items, function(item){
-      if(item.get('_type') == 'player'){
-        names[nameIndex] = item.get('_displayname');
+      if(item.get('_type') == 'player' && options.value == 'name'){
+        names[options.nameIndex] = item.get('_displayname');
       } else {
-        names[nameIndex] = item.get('name');
+        names[options.nameIndex] = item.get(options.value);
       }
 
       var suggestion = suggestionFront + names.toString() + suggestionEnd;
       suggestion = '!{URIFixed}' + encodeURIFixed(suggestion);
-      whisper('[' + names[nameIndex] + '](' + suggestion  + ')', {speakingTo: playerid, gmEcho: true});
+      whisper('[' + names[options.nameIndex] + '](' + suggestion  + ')', {speakingTo: playerid, gmEcho: true});
     });
 
     return false;
