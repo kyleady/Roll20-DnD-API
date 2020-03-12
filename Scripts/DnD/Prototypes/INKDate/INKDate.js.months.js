@@ -21,3 +21,5 @@ INKDate.months = () => [
 
 INKDate.typicalDaysInAMonth = 30;
 INKDate.typicalDaysInAYear = 365;
+INKDate.positiveYearSuffix = 'DR';
+INKDate.negativeYearSuffix = '-DR';

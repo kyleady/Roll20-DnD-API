@@ -7,6 +7,12 @@ INKDate.prototype.toString = function(options) {
   let output = '';
   const the = capitalizeThe ? 'The' : `the`;
   if(this.daysInTheMonth() > 1) output += `${the} ${day} of `;
-  output += `${month}, ${this.Year} DR`;
+  output += `${month}, `;
+  if(this.Year > 0) {
+    output += `${this.Year} ${INKDate.positiveYearSuffix}`
+  } else {
+    output += `${1 - this.Year} ${INKDate.negativeYearSuffix}`
+  }
+
   return output;
 }
