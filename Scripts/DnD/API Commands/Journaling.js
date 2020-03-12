@@ -38,5 +38,5 @@ const INKJournaling = (matches, msg) => {
 
 on('ready', () => {
   CentralInput.addCMD(/^!\s*journal\s*(\+|-)\s*=?\s*((?:\d+\s*(?:days?|months?|years?)\s*,?\s*)+)(.*)$/i, INKJournaling, true);
-  CentralInput.addCMD(/^!\s*journal()()(.*)$/i, INKJournaling, true);
+  CentralInput.addCMD(/^!\s*journal()()((?!\s*(?:\+|-)\s*=?).*)$/i, INKJournaling, true);
 });

@@ -45,7 +45,7 @@ INKExpReset = (matches, msg) => {
 
 on('ready', () => {
   CentralInput.addCMD(/^!\s*xp\s*levels\s*=\s*(\d+)\s*$/i, INKExpLevelsSet);
-  CentralInput.addCMD(/^!\s*xp\s*levels\s*?\s*$/i, INKExpLevelsQuery);
+  CentralInput.addCMD(/^!\s*xp\s*levels\s*\?\s*$/i, INKExpLevelsQuery);
   CentralInput.addCMD(/^!\s*xp\s*players\s*?\s*=\s*((?:\d+\s*,?\s*)+)$/i, INKExpPlayersSet);
   CentralInput.addCMD(/^!\s*xp\s*\?\s*$/i, INKExp.displayReport);
   CentralInput.addCMD(/^!\s*xp\s*reset\s*$/i, INKExpReset);

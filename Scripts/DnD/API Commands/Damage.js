@@ -23,7 +23,7 @@ const INKDamageQuery = (matches, msg, options) => {
 }
 
 const INKDamageModifier = (matches, msg) => {
-  const type = /(crit|critical)/i.test(matches[1]) ? 'crit' : 'dam';
+  const type = /(crit|critical)/i.test(matches[1]) ? 'crit' : 'dmg';
   const operator = matches[2];
   const value = Number(matches[3]);
 
@@ -38,6 +38,9 @@ const INKDamageModifier = (matches, msg) => {
     const new_value = old_value / value;
   } else if(operator == '') {
     const new_value = value;
+  } else {
+    log("WARNING: OPERATOR NOT MATCHED: " + operator)
+    return;
   }
 
   state.INK_DATA[type] = Math.round(new_value);
@@ -45,7 +48,7 @@ const INKDamageModifier = (matches, msg) => {
 }
 
 on('ready', () => {
-  CentralInput.addCMD(/^!\s*(dmg|dam|damage|attack|crit|critical)\s*(I|X|R|E|)\s*$/i, INKDamage, true);
+  CentralInput.addCMD(/^!\s*(dmg|dam|damage|attack|crit|critical)\s*()\s*$/i, INKDamage, true);
   CentralInput.addCMD(/^!\s*(dmg|dam|damage|attack|crit|critical)\s*\?\s*$/i, INKDamageQuery, true);
   CentralInput.addCMD(/^!\s*(dmg|dam|damage|attack|crit|critical)\s*(\+|-|\*|\/|)\s*=?\s*(\d+.?\d*)\s*$/, INKDamageModifier, true)
 });
