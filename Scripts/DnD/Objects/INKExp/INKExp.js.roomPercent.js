@@ -14,8 +14,10 @@ INKExp.roomPercent = (roomIndex) => {
   } else if(roomXP >= easy) {
     const easyPercent = ((roomXP - easy) * 100) / (medium - easy);
     return `Easy(+${Math.round(easyPercent)}%)`;
-  } else {
+  } else if(roomXP > 0){
     const laughablePercent = (roomXP * 100) / easy;
     return `Laughable(+${Math.round(laughablePercent)}%)`;
+  } else {
+    return "Empty";
   }
 }

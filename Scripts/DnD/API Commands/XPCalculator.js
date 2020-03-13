@@ -33,7 +33,7 @@ INKExpAdd = (matches, msg) => {
     }
   });
 
-  if(room.length <= 0) return whisper('ERROR: No xp to add.');
+  if(room.length <= 0) whisper('WARNING: 0 xp.');
   INKExp.Rooms.push(room);
   INKExp.displayReport();
 }
@@ -43,6 +43,23 @@ INKExpReset = (matches, msg) => {
   whisper('Experience rooms reset.');
 }
 
+INKExpSave = (matches, msg) => {
+  eachCharacter(msg, (character, graphic) => {
+    var localAttributes = new LocalAttributes(graphic);
+    localAttributes.set("xpForMultipleRooms", JSON.stringify(INKExp.Rooms));
+    whisper(`XP for ${INKExp.Rooms.length} Rooms saved on ${graphic.get("name")}.`);
+  }, {onlyOneCharacter: true, defaultCharacter: false, characterRequired: false});
+}
+
+INKExpLoad = (matches, msg) => {
+  eachCharacter(msg, (character, graphic) => {
+    var localAttributes = new LocalAttributes(graphic);
+    var xpForMultipleRooms = carefulParse(localAttributes.get("xpForMultipleRooms"));
+    if(xpForMultipleRooms) INKExp.Rooms = xpForMultipleRooms;
+    INKExp.displayReport()
+  }, {onlyOneCharacter: true, defaultCharacter: false, characterRequired: false});
+}
+
 on('ready', () => {
   CentralInput.addCMD(/^!\s*xp\s*levels\s*=\s*(\d+)\s*$/i, INKExpLevelsSet);
   CentralInput.addCMD(/^!\s*xp\s*levels\s*\?\s*$/i, INKExpLevelsQuery);
@@ -50,4 +67,6 @@ on('ready', () => {
   CentralInput.addCMD(/^!\s*xp\s*\?\s*$/i, INKExp.displayReport);
   CentralInput.addCMD(/^!\s*xp\s*reset\s*$/i, INKExpReset);
   CentralInput.addCMD(/^!\s*xp\s*(\+|add)\s*$/i, INKExpAdd);
+  CentralInput.addCMD(/^!\s*xp\s*load\s*$/i, INKExpLoad);
+  CentralInput.addCMD(/^!\s*xp\s*save\s*$/i, INKExpSave);
 });

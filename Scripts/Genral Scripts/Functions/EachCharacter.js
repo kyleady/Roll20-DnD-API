@@ -1,6 +1,8 @@
 function eachCharacter(msg, givenFunction, options){
   options = options || {}
-  if(msg.selected == undefined || msg.selected.length <= 0){
+  if(options.characterRequired == undefined) options.characterRequired = true;
+  if(options.defaultCharacter == undefined) options.defaultCharacter = true;
+  if((msg.selected == undefined || msg.selected.length <= 0) && options.defaultCharacter){
     msg.selected = [defaultCharacter(msg.playerid)];
     if(msg.selected[0] == undefined) return;
   }
@@ -17,7 +19,7 @@ function eachCharacter(msg, givenFunction, options){
       }
 
       var character = getObj('character', graphic.get('represents'))
-      if(character == undefined){
+      if(character == undefined && options.characterRequired){
         log('character undefined')
         log(graphic)
         return whisper('character undefined', {speakingTo: msg.playerid, gmEcho: true});
@@ -60,7 +62,7 @@ function eachCharacter(msg, givenFunction, options){
     } else if(typeof obj.get === 'function' && obj.get('_type') == 'graphic') {
       var graphic = obj;
       var character = getObj('character', graphic.get('represents'));
-      if(character == undefined){
+      if(character == undefined && options.characterRequired){
         log('character undefined')
         log(graphic)
         return whisper('character undefined', {speakingTo: msg.playerid, gmEcho: true});
